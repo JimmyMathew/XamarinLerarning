@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns:local="clr-namespace:XamarinLearningApp.Extensions"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinLearningApp.TableViewPage">
+    <ContentPage.Content>
+        <TableView Intent="Form">
+           
+                <TableRoot>
+                <TableSection Title="Basics">
+                    <TextCell Text="Name" Detail="Jimmy Mathew"/>
+                    <EntryCell Label="Title" Placeholder="(eg:Shopping)" Completed="EntryCell_Completed"/>
+                    <SwitchCell Text="Notifications" On="False" OnChanged="SwitchCell_OnChanged"/>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13,0">
+                            <Label Text="Starts" VerticalOptions="Center"/>
+                            <DatePicker Date="5 Jan 2020" HorizontalOptions="EndAndExpand"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <local:DateCell Label="Ends"/>
+                    <!--Picker with Navigation page-->
+                    <ViewCell Tapped="ViewCell_Tapped">
+                        <StackLayout Orientation="Horizontal" Padding="13,5">
+                            <Label Text="Contact Method" VerticalOptions="Center"/>
+                            <Label x:Name="contactMethod"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="EndAndExpand"
+                                   Text="None"
+                                   TextColor="Gray"/>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+                </TableRoot>
+         
+        </TableView>
+    </ContentPage.Content>
+</ContentPage>

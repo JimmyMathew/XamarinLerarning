@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinLearningApp.Advanced">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!--<x:Int32 x:Key="borderRadius">20</x:Int32>-->
+            <Color x:Key="buttonBackgroundColor">Gray</Color>
+            <!--Explicit Styles : Would be applied  to all the button types with static resource button-->
+            <Style x:Key="button" TargetType="Button">
+                <!--<Setter Property="BackgroundColor" Value="Gray"/>-->
+                <!--Usage of static resource inside styles-->
+                <Setter Property="BackgroundColor" Value="{StaticResource buttonBackgroundColor}"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="BorderRadius" Value="20"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+            <!--Style inherited from parent style-->
+            <Style x:Key="primaryButton" TargetType="Button" BasedOn="{StaticResource button}">
+                <Setter Property="BackgroundColor" Value="Pink"/>
+            </Style>
+            <!--Implicit Styles : Would be applied  to all the button types-->
+            <Style x:Key="button" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource buttonBackgroundColor}"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="BorderRadius" Value="20"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center">
+            <StackLayout.Resources>
+                <!--<x:Int32 x:Key="borderRadius">20</x:Int32>-->
+            </StackLayout.Resources>
+            <Button Text="Login"
+                    BackgroundColor="{StaticResource buttonBackgroundColor}"
+                    TextColor="White"
+                    BorderRadius ="{StaticResource borderRadius}"
+                    FontAttributes="Bold"
+                    />
+            <Button Text="Register"
+                    BackgroundColor="{StaticResource buttonBackgroundColor}"
+                    TextColor="White"
+                    BorderRadius ="{StaticResource borderRadius}"
+                    FontAttributes="Bold"
+                    />
+            <Button Text="StyleButton"
+                    Style="{StaticResource button}"
+                    />
+            <Button Text="StyleButton"
+                    Style="{StaticResource primaryButton}"
+                    />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

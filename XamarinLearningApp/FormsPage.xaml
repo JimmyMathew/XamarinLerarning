@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinLearningApp.FormsPage"
+             xmlns:sys ="clr-namespace:System;assembly=mscorlib"
+             >
+    <ContentPage.Content>
+        <StackLayout>
+            <!--Switch-->
+            <!--<Switch IsToggled="False" Toggled="Switch_Toggled"/>
+            <Label Text="HiddenLabel" x:Name="hiddenlabel"/>-->
+            <Switch IsToggled="False" x:Name="switch" HorizontalOptions="Start"/>
+            <Label Text="Content" IsVisible="{Binding Source={x:Reference switch},Path=IsToggled}"/>
+        <!--Slider-->
+            <!--<Slider x:Name="slider" Minimum="0" Maximum="255" ValueChanged="slider_ValueChanged"/>-->
+            <Slider  x:Name="slider"  Maximum="255" Minimum="10"/>
+            <Label Text="{Binding Source={x:Reference slider},Path=Value,StringFormat='{0:N0}'}"/>
+            <!--Stepper-->
+            <Stepper x:Name="stepper" Minimum="0" Maximum="10" Increment="5"/>
+            <Label Text="{Binding Source={x:Reference stepper},Path=Value,StringFormat='{0:N0}'}"/>
+            <!--Entry or TextBox-->
+            <Entry Keyboard="Numeric" Placeholder="Phone" TextChanged="Entry_TextChanged"/>
+            <Entry IsPassword="True" Placeholder="Password" Completed="Entry_Completed"/>
+            <Label x:Name="completelabel" Text="Incomplete"/>
+            <!--<Editor BackgroundColor="Yellow" VerticalOptions="FillAndExpand"/>-->
+            <!--Picker or Dropdown-->
+            <!--<Picker Title="Contact Method" BackgroundColor="Green" SelectedIndexChanged="Picker_SelectedIndexChanged" x:Name="picker">
+                <Picker.Items>
+                    <x:String>SMS</x:String>
+                    <x:String>Email</x:String>
+                </Picker.Items>
+            </Picker>-->
+            <Picker Title="Contact Method" BackgroundColor="Green" SelectedIndexChanged="Picker_SelectedIndexChanged" x:Name="picker">
+            </Picker>
+            <!--Date and Time Picker-->
+            <DatePicker Date="{x:Static sys:DateTime.Today}" Format="dd MMM yyyy" MinimumDate="1 Jan 2020" MaximumDate="6 Jan 2021" DateSelected="DatePicker_DateSelected"/>
+            <TimePicker Time="13:00"/>
+      
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

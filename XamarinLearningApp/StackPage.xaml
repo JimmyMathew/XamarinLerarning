@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinLearningApp.StackPage"
+             Padding="0,20,0,0">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Yellow"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
+                     Spacing="20"
+                     Padding="10,40,10,40"
+                     Orientation="Horizontal"
+                     >
+            <StackLayout>
+                <Label Text="Label1.1" BackgroundColor="green"/>
+                <Label Text="Label1.2" BackgroundColor="Blue"/>
+            </StackLayout>
+            
+            <Label Text="Label2" BackgroundColor="Silver"/>
+            <Label Text="Label3" BackgroundColor="Silver"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

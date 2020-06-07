@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinLearningApp.GreetPage">
+    <ContentPage.Content>
+        <!--Using event handler-->
+        <!--<StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Label Text="Hello World" x:Name="homelable"/>
+            <Slider ValueChanged="Slider_ValueChanged" x:Name="homeslider"/>
+        </StackLayout>-->
+        
+        <!--Using Data binding and reference markup extension-->
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center"  BindingContext="{x:Reference homeslider}">
+            <BoxView 
+                BackgroundColor="Green" 
+                Opacity="{Binding Value}"
+                />
+            <Label 
+                Text="{Binding Value,
+                StringFormat='Value is {0:F2}'}"
+                Opacity="{Binding Value}"/>
+            <Slider x:Name="homeslider"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
